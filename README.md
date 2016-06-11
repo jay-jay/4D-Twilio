@@ -17,3 +17,8 @@ A 4D Component for Twilio
 
 ## Messaging
 $sent:=_twl_sms_send("+4712345678";"Hey! I am your SMS")
+
+## VOICE
+In roadmap...
+
+Contributos are highly appreciated.
