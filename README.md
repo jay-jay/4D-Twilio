@@ -1,7 +1,7 @@
 # 4D-Twilio
 A 4D Component for Twilio
 
-## This component is still in under development
+## This component is under development.... Use at your own risk....
 
 ## Be sure that you have an active Twilio account. The following keys are required
 1. sid
