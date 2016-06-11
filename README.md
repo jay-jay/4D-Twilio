@@ -11,8 +11,8 @@ A 4D Component for Twilio
 
 ## Installation
 1. Drop Twilio.4dbase into your 4D Application's Components folder
-2. Under Resources, rename config-sample.json to config.sample
-3. Enter your Twilio keys
+2. Under Resources, rename config-sample.json to config.json
+3. Enter your Twilio keys in your config
 4. Now your ready to rock and roll.
 
 ## Messaging
