@@ -1,0 +1,79 @@
+//%attributes = {"lang":"en","shared":true} comment added and reserved by 4D.
+If (False)//Description
+// ----------------------------------------------------
+// Developer: James Borillo
+// Date and time: 23.05.2016 at 15:03
+//
+// Method sends SMS Via Twilio
+// Requirements:
+// - Twilio SID and Token
+// - Resources/php/lib/lx.php
+// - Resource/json/config/config.json
+// - sendSms uses Twilio PHP library. Pulled from Composer to Resources/php/vendors/twilio
+// ----------------------------------------------------
+// 
+End if 
+
+If (True)//Declarations and initialization of variables
+C_BOOLEAN($0)
+C_TEXT($response)
+C_OBJECT($response_json)
+C_TEXT($1;$message)
+C_TEXT($2;$message)
+C_LONGINT($CP)
+C_LONGINT($ii)
+C_BOOLEAN($PHP_Ok)
+C_TEXT(phpCommError)
+C_TEXT($path;$sid;$token;$messaging_service_sid;$mobile_from)
+$CP:=Count parameters
+$Continue:=$CP>=0
+If ($CP>=2)
+$mobile:=$1
+$message:=$2
+Else 
+//$Continue:=False
+$mobile:="+4795761320"
+$message:="Hey Jo!"
+End if 
+
+End if 
+
+Case of //
+: ($Continue)
+$path:=Get 4D folder(Current resources folder)+"php"+Folder separator+"twilio.php"
+
+$sid:=OB Get(_twl_get_config ;"sid")
+$token:=OB Get(_twl_get_config ;"token")
+$messaging_service_sid:=OB Get(_twl_get_config ;"messaging_service_sid")
+$mobile_from:=OB Get(_twl_get_config ;"number")
+
+While ((Not($PHP_Ok)) & ($ii<5))// Loop until OK or Force exit once iteration reaches 10 to prevent infinite loop. For sure that the PHP execute has a problem already.
+$PHP_Ok:=PHP Execute($path;"sendSms";$response;$mobile;$message;$sid;$token;$messaging_service_sid;$mobile_from)
+$ii:=$ii+1
+End while 
+
+If ($PHP_Ok)
+$response_json:=JSON Parse($response)
+$twilio_status:=OB Get($response_json;"status")
+If (($twilio_status="failed") | ($twilio_status="undelivered"))
+$0:=False
+Else 
+$0:=True
+End if 
+
+Else 
+
+If (phpCommError="")
+C_TEXT($stdOut)
+ARRAY TEXT($errLabels;0)
+ARRAY TEXT($errValues;0)
+ARRAY TEXT($httpHeaderFields;0)
+ARRAY TEXT($httpHeaderValues;0)
+PHP GET FULL RESPONSE($stdOut;$errLabels;$errValues;$httpHeaderFields;$httpHeaderValues)
+Else 
+ALERT(phpCommError)
+End if 
+
+End if 
+
+End case 
