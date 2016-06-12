@@ -5,9 +5,9 @@ A 4D Component for Twilio
 
 ## Be sure that you have an active Twilio account. The following keys are required
 1. sid
-2. toke
-3. number (OPTIONAL) - If you use this in your config, messaging_service_sid has no effect
-4. messaging_service_sid (OPTIONAL) - In order to use this, number should not be added in config. Nice to have if you want to show your Brand name to you SMS receipient rather than a mobile-number
+2. token
+3. number - Your mobile number. If you use this in your config, messaging_service_sid has no effect
+4. messaging_service_sid (OPTIONAL) - In order to use this, number should not be left empty in the config. Nice to have if you want to show your Brand name to your SMS receipient rather than your mobile number.
 
 ## Installation
 1. Drop Twilio.4dbase into your 4D Application's Components folder
