@@ -1,7 +1,10 @@
 # 4D-Twilio
-A 4D Component for Twilio
+A 4D v14 Component for Twilio
 
-## This component is under development.... Use at your own risk....
+It will work with 4D v15 as well. Just convert this component.
+
+## This component is under development.... Test before using in production.
+
 
 ## Be sure that you have an active Twilio account. The following keys are required
 1. sid
