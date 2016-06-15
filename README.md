@@ -18,10 +18,16 @@ It will work with 4D v15 as well. Just convert this component.
 3. Enter your Twilio keys in your config
 4. Now your ready to rock and roll.
 
-## Messaging
+### Messaging
+####Basic SMS Sending
 $sent:=_twl_sms_send("+4712345678";"Hey! I am your SMS")
 
-## VOICE
+####Advanced SMS Sending and status tracking
+In roadmap...
+
+
+
+### Voice
 In roadmap...
 
 
