@@ -24,7 +24,7 @@ $sent:=_twl_sms_send("+4712345678";"Hey! I am your SMS")
 $json:=_twl_sms_send_json_response("+4712345678";"Hey! I am your SMS")
 $status:=OB Get($json;"status")
 
-####Advanced SMS Sending and status tracking
+####More Advanced SMS transactions
 In roadmap...
 
 ### Voice
