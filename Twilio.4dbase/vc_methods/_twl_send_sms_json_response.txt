@@ -1,4 +1,4 @@
-//%attributes = {"lang":"en","shared":true} comment added and reserved by 4D.
+//%attributes = {"lang":"en"} comment added and reserved by 4D.
 If (False)//Description
 // ----------------------------------------------------
 // Developer: James Borillo
@@ -12,9 +12,8 @@ If (False)//Description
 End if 
 
 If (True)//Declarations and initialization of variables
-C_BOOLEAN($0)
+C_OBJECT($0)
 C_TEXT($response)
-C_OBJECT($response_json)
 C_TEXT($1;$message)
 C_TEXT($2;$message)
 C_LONGINT($CP)
@@ -48,13 +47,7 @@ $ii:=$ii+1
 End while 
 
 If ($PHP_Ok)
-$response_json:=JSON Parse($response)
-$twilio_status:=OB Get($response_json;"status")
-If (($twilio_status="failed") | ($twilio_status="undelivered"))
-$0:=False
-Else 
-$0:=True
-End if 
+$0:=JSON Parse($response)
 
 Else 
 
