@@ -19,10 +19,12 @@ This component is under development.... Test before using in production.
 
 ### Messaging
 ####Basic SMS Sending (boolean response)
-$sent:=_twl_sms_send("+4712345678";"Hey! I am your SMS")
+
+```$sent:=_twl_sms_send("+4712345678";"Hey! I am your SMS")```
+
 ####Advanced SMS Sending (json response)
-$json:=_twl_sms_send_json_response("+4712345678";"Hey! I am your SMS")
-$status:=OB Get($json;"status")
+```$json:=_twl_sms_send_json_response("+4712345678";"Hey! I am your SMS")
+$status:=OB Get($json;"status")```
 
 ####More Advanced SMS transactions
 In roadmap...
