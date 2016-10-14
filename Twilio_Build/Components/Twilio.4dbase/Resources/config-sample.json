@@ -1,0 +1,6 @@
+{
+	"sid"                   : "YOUR-TWILIO-SID",
+	"token"                 : "YOUR-TWILIO-TOKEN",
+	"number"                : "OPTIONAL: YOUR TWILIO PHONE NUMBER (LEAVE THIS EMPTY IF YOU WANT TO USE MESSAGING_SERVICE_SID)",
+	"messaging_service_sid" : "OPTIONAL: YOUR-TWILIO-MESSAGING-SERVICE-SID"
+}
