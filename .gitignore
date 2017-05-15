@@ -6,7 +6,7 @@ Twilio.4dbase/Components
 Twilio.4dbase/vc_data
 Twilio.4dbase/vc_methods/Debug.txt
 Twilio.4dbase/Twilio.4DD
-Twilio.4dbase/Twilio.4DIndy
+#Twilio.4dbase/Twilio.4DIndy # Always include 4DIndy in git
 Twilio.4dbase/Twilio.journal
 Twilio.4dbase/Twilio.Match
 Twilio.4dbase alias
